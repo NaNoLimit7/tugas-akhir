@@ -2,34 +2,42 @@ import java.util.Scanner;
 public class apkTebang3 {
   
   static int ang[] = new int[3];
+  static Scanner maha = new Scanner(System.in);
   public static void main(String[] args) {
-    System.out.println("tebak angka bulat belasan");
-    Scanner maha = new Scanner(System.in);
-    for(int i = 0; i<ang.length;i++){
-      ang[i] = maha.nextInt();
-    }
+    System.out.println("Tebak bilangan bulat belasan dan input angka 0 jika ingin berhenti ");
     hitung();
+    maha.close();
+  }
+  /**metode hitung digunakan untuk mengulang inputan sebanyak tiga kali (mengguanakn for loop)
+   *dan sekaligus mencetak output dari inputan yang telah dimasukkan.
+   *while loop dengan kondisi true digunakan untuk mengulangi perulangan terus menerus 
+   *jika tidak ada inputan 0 atau 15 
+   */
+  static void hitung(){
+    outerLoop:
     
-      maha.close();
-    }
-    static void hitung(){
+    while (true) {
 
+      for(int i = 0; i<ang.length;i++){
+        ang[i] = maha.nextInt();
+      }
       for (int i = 0;i<ang.length;i++){
         
-        
         if (ang[i] == 0) {
-          break;
+          System.exit(0);
         }else if(ang[i] != 0){
           if (ang[i] == 15) {
             System.out.println("kalo "+ang[i]+" jawabanmu benar :)");
-            break;
+            break outerLoop;
           } else if (ang[i] != 15 && ang[i] > 15 && ang[i] < 21) {
             System.out.println(ang[i]+" Kegedean Borrr....");
-            continue;
+        
           }else if (ang[i] != 15 && ang[i] < 15 && ang[i] > 9) {
-            System.out.println(ang[i]+" Kekecilan gak sihhh.....");
+            System.out.println(ang[i]+" Kekecilan gak sihhh....");
+            
           }else {} 
         }
       }
     }
+  }
 }
