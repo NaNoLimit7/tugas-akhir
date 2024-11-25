@@ -4,7 +4,8 @@ public class apkTebang3 {
   static int ang[] = new int[3];
   static Scanner maha = new Scanner(System.in);
   public static void main(String[] args) {
-    System.out.println("Tebak bilangan bulat belasan dan input angka 0 jika ingin berhenti ");
+    System.out.println("              ====~+ Permainan Tebak Angka +~====");
+    System.out.println("input tiga angka sekaligus dan input angka 0 jika ingin berhenti");
     hitung();
     maha.close();
   }
